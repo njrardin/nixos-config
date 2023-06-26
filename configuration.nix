@@ -12,11 +12,6 @@
   # Additional hardware configuration and hardwarec-configuration.nix overrides
   hardware.bluetooth.enable = true;
 
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.systemd-boot.configurationLimit = 10;
-  # boot.loader.efi.canTouchEfiVariables = true;
-
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -24,17 +19,12 @@
     };
     grub = {
       enable = true;
-      version = 2;
       configurationLimit = 10;
       devices = ["nodev"];
       efiSupport = true;
       useOSProber = true;
    };
   };
-
-
-
-
 
   nix.gc = {
     automatic = true;
@@ -118,6 +108,7 @@
      wget
      curl
      git
+     xclip 
   ];
 
   # This value determines the NixOS release from which the default
