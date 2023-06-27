@@ -16,12 +16,20 @@
 
   programs.fish = {
     enable = true;
+    plugins = [
+      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+    ];
   };
 
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
     theme = "Gruvbox Material Dark Hard";
+    font = {
+      name = "MesloLGS NF Regular";
+    };
   };
 
   home.packages = with pkgs; [
