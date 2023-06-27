@@ -14,6 +14,15 @@
     enable = true;
   };
 
+  programs.fish = {
+    enable = true;
+  };
+
+  programs.kitty = {
+    enable = true;
+    shellIntegration.enableFishIntegration = true;
+  };
+
   home.packages = with pkgs; [
     neofetch
     neovim
