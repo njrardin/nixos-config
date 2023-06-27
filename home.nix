@@ -21,6 +21,7 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
+    theme = "Gruvbox Material Dark Hard";
   };
 
   home.packages = with pkgs; [
