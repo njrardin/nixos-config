@@ -10,6 +10,10 @@
     userEmail = "nathanaelrardin@gmail.com";
   };
 
+  programs.gh = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     neofetch
     neovim
@@ -20,7 +24,6 @@
     bat
     exa
     tmux
-    gh
   ];
 
   home.stateVersion = "23.05";
