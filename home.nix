@@ -43,6 +43,8 @@
     bat
     exa
     tmux
+    fzf
+    grc
   ];
 
   home.stateVersion = "23.05";
