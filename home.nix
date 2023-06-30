@@ -37,6 +37,7 @@
     neovim
     firefox
     bitwarden
+    discord
     zip
     unzip
     bat
