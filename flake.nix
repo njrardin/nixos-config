@@ -1,5 +1,5 @@
 {
-  description = "Nate's NixOS Configuration Flake";
+  description = "Nate Rardin's NixOS Configuration Flake";
 
   # Inputs
   # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
