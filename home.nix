@@ -32,9 +32,26 @@
     };
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+      which-key-nvim
+      mason-nvim
+      telescope-nvim
+      gitsigns-nvim
+      plenary-nvim
+      lualine-nvim
+      nvim-web-devicons
+    ];
+  };
+
   home.packages = with pkgs; [
     neofetch
-    neovim
     firefox
     bitwarden
     discord
