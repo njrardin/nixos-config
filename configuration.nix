@@ -3,14 +3,13 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [ 
       ./hardware-configuration.nix
-    ];
-  # Additional hardware configuration and hardwarec-configuration.nix overrides
+  ];
+
+  # Additional hardware configuration and hardware-configuration.nix overrides
   hardware.bluetooth.enable = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.prime = {
     offload = {
       enable = true;
@@ -21,6 +20,7 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  # GRUB 2 Bootloader
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -35,54 +35,59 @@
    };
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
+  # NixOS garbage collection and cache optimizations
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+    settings.auto-optimise-store = true;
   };
 
-  nix.settings.auto-optimise-store = true;
-
-  networking.hostName = "njrardinMSI"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # Networking configuration
+  networking = {
+    networkmanager.enable = true;
+    hostName = "njrardinMSI"; 
+  };
 
   # Sets time zone.
   time.timeZone = "America/Chicago";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  # Sets internationalisation properties.
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
+  # Configures the X11 windowing system.
   services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+
+    # Enable the KDE Plasma Desktop Environment.
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+
+    # Configure keymap in X11
     layout = "us";
     xkbVariant = "";
-  };
 
-  # Additional xserver config
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.disableWhileTyping = true;
-  services.xserver.libinput.touchpad.naturalScrolling = true;
+    # Additional xserver config
+    libinput.enable = true;
+    libinput.touchpad.disableWhileTyping = true;
+    libinput.touchpad.naturalScrolling = true;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -98,7 +103,12 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passitwd’.
+  # Font installations
+  fonts.fonts = with pkgs; [
+    meslo-lgs-nf
+  ];
+
+  # Defines my (Nathanael Rardin's) user account
   users.users.njrardin = {
     isNormalUser = true;
     description = "Nathanael Rardin";
@@ -108,20 +118,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enables flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     vim 
      wget
      curl
      git
      xclip 
-  ];
-
-  fonts.fonts = with pkgs; [
-    meslo-lgs-nf
   ];
 
   # This value determines the NixOS release from which the default
@@ -131,5 +137,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
