@@ -84,9 +84,16 @@
     xkbVariant = "";
 
     # Additional xserver config
-    libinput.enable = true;
-    libinput.touchpad.disableWhileTyping = true;
-    libinput.touchpad.naturalScrolling = true;
+    libinput = { 
+      enable = true;
+      touchpad = { 
+        disableWhileTyping = true;
+        naturalScrolling = true;
+      };
+      mouse = {
+        transformationMatrix = "0.75 0 0 0 0.75 0 0 0 1";
+      };
+    };
   };
 
   # Enable CUPS to print documents.
