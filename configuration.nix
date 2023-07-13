@@ -91,7 +91,7 @@
         naturalScrolling = true;
       };
       mouse = {
-        transformationMatrix = "0.75 0 0 0 0.75 0 0 0 1";
+        transformationMatrix = "0.7 0 0 0 0.7 0 0 0 1";
       };
     };
   };
