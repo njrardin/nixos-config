@@ -3,6 +3,8 @@
 {
   home.username = "njrardin";
   home.homeDirectory = "/home/njrardin";
+  home.stateVersion = "23.05";
+  programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
@@ -63,8 +65,4 @@
     fzf
     grc
   ];
-
-  home.stateVersion = "23.05";
-
-  programs.home-manager.enable = true;
 }
