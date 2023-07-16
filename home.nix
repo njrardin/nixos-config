@@ -55,7 +55,7 @@
   home.packages = with pkgs; [
     neofetch
     firefox
-    tor
+    tor-browser-bundle-bin
     bitwarden
     discord
     zip
