@@ -52,6 +52,13 @@
     ];
   };
 
+  xdg.configFile = {
+    "nvim" = {
+      recursive = true;
+      source = ./config/nvim;
+    };
+  };
+
   home.packages = with pkgs; [
     neofetch
     firefox
