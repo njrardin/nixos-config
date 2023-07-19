@@ -56,6 +56,7 @@
     neofetch
     firefox
     tor-browser-bundle-bin
+    qbittorrent
     bitwarden
     discord
     zip
