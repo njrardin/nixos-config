@@ -41,14 +41,46 @@
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      # lanuguage plugins
+      nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      copilot-lua
       which-key-nvim
       mason-nvim
       telescope-nvim
-      gitsigns-nvim
       plenary-nvim
+      gitsigns-nvim
       lualine-nvim
       nvim-web-devicons
+    ];
+    
+    extraPackages = with pkgs; [
+      # languages
+      nodejs
+      rustc
+
+      # language servers
+      nil
+      lua-language-server
+      nodePackages."bash-language-server"
+      nodePackages."typescript"
+      nodePackages."typescript-language-server"
+      nodePackages."vscode-langservers-extracted"
+      rust-analyzer
+      terraform-ls
+
+      # formatters
+      nixpkgs-fmt
+      rustfmt
+
+      # tools
+      cargo
+      gcc
+      ghc
+
+      # telescope deps
+      ripgrep
+      fd
     ];
   };
 

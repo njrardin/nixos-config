@@ -12,10 +12,8 @@ vim.opt.wrap = false
 
 vim.opt.smartindent = true
 
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "auto"
 
 vim.opt.updatetime = 50
