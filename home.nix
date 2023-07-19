@@ -58,11 +58,26 @@
       source = ./config/nvim;
     };
   };
+    	
+  # Enables redshift (a linux f.lux alternative)
+  services.redshift = {
+    enable = true;
+    latitude = 41.881832;
+    longitude = -87.623177;
+    duskTime = "22:00";
+    dawnTime = "6:30";
+  };
+
+  # Visual Studio Code
+  programs.vscode = {
+    enable = true;
+  };
 
   home.packages = with pkgs; [
     neofetch
     firefox
     tor-browser-bundle-bin
+    qbittorrent
     bitwarden
     discord
     zip
