@@ -52,6 +52,15 @@
     ];
   };
 
+  # Enables redshift (a linux f.lux alternative)
+  services.redshift = {
+    enable = true;
+    latitude = 41.881832;
+    longitude = -87.623177;
+    duskTime = "22:00";
+    dawnTime = "6:30";
+  };
+
   home.packages = with pkgs; [
     neofetch
     firefox
