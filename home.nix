@@ -61,6 +61,11 @@
     dawnTime = "6:30";
   };
 
+  # Visual Studio Code
+  programs.vscode = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     neofetch
     firefox
