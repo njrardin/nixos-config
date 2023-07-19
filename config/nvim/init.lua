@@ -1,3 +1,6 @@
 -- General Config Files (./lua)
-require "settings"
 require "keymap"
+require "settings"
+
+-- Plugin Config Files
+require "plugins.telescope"
