@@ -44,11 +44,17 @@
       # lanuguage plugins
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      copilot-lua
-      which-key-nvim
-      mason-nvim
+      coc-nvim
+      coc-lua
+
+      # telescope
       telescope-nvim
       plenary-nvim
+
+      # misc.
+      gruvbox-material
+      copilot-lua
+      which-key-nvim
       gitsigns-nvim
       lualine-nvim
       nvim-web-devicons
@@ -61,13 +67,13 @@
 
       # language servers
       nil
+      nixd
       lua-language-server
       nodePackages."bash-language-server"
       nodePackages."typescript"
       nodePackages."typescript-language-server"
       nodePackages."vscode-langservers-extracted"
       rust-analyzer
-      terraform-ls
 
       # formatters
       nixpkgs-fmt
