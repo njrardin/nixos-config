@@ -34,6 +34,10 @@
     font = {
       name = "MesloLGS NF Regular";
     };
+    extraConfig = 
+    ''
+      background_opacity 0.85
+    '';
   };
 
   programs.neovim = {
