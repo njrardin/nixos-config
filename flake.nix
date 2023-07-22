@@ -21,24 +21,31 @@
         inherit system;
         modules = [
           ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.njrardin = import ./home.nix;
-          }
         ];
       };
     };
-    devShells.${system}.nodejs = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        nodejs
-        nodePackages.npm
-        nodePackages.prettier
-        nodePackages.eslint
-        typescript
-        nodePackages.typescript-language-server
-      ];
+    homeConfigurations = {
+      "njrardin" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs;
+        modules = [
+          ./home.nix
+        ];
+      };
+    };
+    devShells.${system} = {
+      # Used to bootstrap initialization of home-manager
+      bootstrap = pkgs.mkShell import ./bootstrap-shell.nix { inherit pkgs; };
+      # Generalized nodejs development environment
+      nodejs = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          nodejs
+          nodePackages.npm
+          nodePackages.prettier
+          nodePackages.eslint
+          typescript
+          nodePackages.typescript-language-server
+        ];
+      };
     };
   };
 }
