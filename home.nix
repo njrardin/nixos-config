@@ -6,6 +6,23 @@
   home.stateVersion = "23.05";
   programs.home-manager.enable = true;
 
+  home.packages = with pkgs; [
+    neofetch
+    firefox
+    tor-browser-bundle-bin
+    bitwarden
+    discord
+    zip
+    unzip
+    bat
+    exa
+    tmux
+    fzf
+    fd
+    grc
+    sqlite
+  ];
+
   programs.git = {
     enable = true;
     userName = "njrardin";
@@ -124,21 +141,4 @@
   programs.vscode = {
     enable = true;
   };
-
-  home.packages = with pkgs; [
-    neofetch
-    firefox
-    tor-browser-bundle-bin
-    bitwarden
-    discord
-    zip
-    unzip
-    bat
-    exa
-    tmux
-    fzf
-    fd
-    grc
-    sqlite
-  ];
 }
