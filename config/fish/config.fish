@@ -1,5 +1,12 @@
 # NJR Fish Config
 
+## Alternative fish greetig
+function fish_greeting
+    echo ""
+    echo "  <~ Welcome back, Nate! ~>"
+    echo ""
+end
+
 ## Variables
 set EDITOR 'nvim'
 set NIXOS_CONFIG_DIRECTORY '/etc/nixos'
