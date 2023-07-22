@@ -14,6 +14,7 @@
 
   programs.gh = {
     enable = true;
+    enableGitCredentialHelper = true;
   };
 
   programs.fish = {
