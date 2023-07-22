@@ -16,7 +16,6 @@
     unzip
     bat
     exa
-    tmux
     fzf
     fd
     grc
@@ -55,6 +54,11 @@
       ''
         background_opacity 0.85
       '';
+  };
+
+  programs.tmux = {
+    enable = true;
+    extraConfig = builtins.readFile ./config/tmux/tmux.conf;
   };
 
   programs.neovim = {
