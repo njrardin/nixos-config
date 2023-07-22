@@ -3,8 +3,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ 
-      ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
   ];
 
   # Additional hardware configuration and hardware-configuration.nix overrides
@@ -29,10 +29,10 @@
     grub = {
       enable = true;
       configurationLimit = 10;
-      devices = ["nodev"];
+      devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true;
-   };
+    };
   };
 
   # NixOS garbage collection and cache optimizations
@@ -48,7 +48,7 @@
   # Networking configuration
   networking = {
     networkmanager.enable = true;
-    hostName = "njrardinMSI"; 
+    hostName = "njrardinMSI";
   };
 
   # Sets time zone.
@@ -73,7 +73,7 @@
   # Configures the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
 
     # Enable the KDE Plasma Desktop Environment.
     displayManager.sddm.enable = true;
@@ -84,9 +84,9 @@
     xkbVariant = "";
 
     # Additional xserver config
-    libinput = { 
+    libinput = {
       enable = true;
-      touchpad = { 
+      touchpad = {
         disableWhileTyping = true;
         naturalScrolling = true;
       };
@@ -126,15 +126,15 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enables flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-     vim 
-     wget
-     curl
-     git
-     xclip 
+    vim
+    wget
+    curl
+    git
+    xclip
   ];
 
   # This value determines the NixOS release from which the default

@@ -34,10 +34,10 @@
     font = {
       name = "MesloLGS NF Regular";
     };
-    extraConfig = 
-    ''
-      background_opacity 0.85
-    '';
+    extraConfig =
+      ''
+        background_opacity 0.85
+      '';
   };
 
   programs.neovim = {
@@ -66,7 +66,7 @@
       nvim-web-devicons
       vimwiki
     ];
-    
+
     extraPackages = with pkgs; [
       # languages
       nodejs
@@ -103,14 +103,14 @@
     };
     "nixpkgs/config.nix" = {
       text =
-      ''
-        {
-          allowUnfree = true;
-        }
-      '';
+        ''
+          {
+            allowUnfree = true;
+          }
+        '';
     };
   };
-    	
+
   # Enables redshift (a linux f.lux alternative)
   services.redshift = {
     enable = true;
