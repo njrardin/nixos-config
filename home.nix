@@ -58,6 +58,7 @@
 
   programs.tmux = {
     enable = true;
+    shell = "${pkgs.fish}/bin/fish";
     extraConfig = builtins.readFile ./config/tmux/tmux.conf;
   };
 
