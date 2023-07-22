@@ -23,6 +23,7 @@
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       { name = "grc"; src = pkgs.fishPlugins.grc.src; }
     ];
+    interactiveShellInit = builtins.readFile ./config/fish/config.fish;
   };
 
   programs.kitty = {

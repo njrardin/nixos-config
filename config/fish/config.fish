@@ -1,0 +1,29 @@
+# NJR Fish Config
+
+## Variables
+set EDITOR 'nvim'
+set NIXOS_CONFIG_DIRECTORY '/etc/nixos'
+
+## Functions
+function edit_directory
+    # Store the current directory in a variable
+    set old_dir (pwd)
+
+    # Check if an argument (directory path) is provided
+    if test -n "$argv"
+        # Change to the specified directory
+        cd $argv[1]
+    else
+        echo "Usage: edit_directory /path/to/directory"
+        return 1
+    end
+
+    # Open NeoVim
+    nvim .
+
+    # After NeoVim is closed, return to the original directory
+    cd $old_dir
+end
+
+## Aliases
+alias nixconf 'edit_directory $NIXOS_CONFIG_DIRECTORY'
