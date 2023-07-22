@@ -86,7 +86,6 @@
 
       # telescope deps
       ripgrep
-      fd
     ];
   };
 
@@ -123,6 +122,8 @@
     exa
     tmux
     fzf
+    fd
     grc
+    sqlite
   ];
 }
