@@ -12,6 +12,7 @@
     tor-browser-bundle-bin
     bitwarden
     discord
+    gtop
     zip
     unzip
     bat
