@@ -34,7 +34,7 @@
     };
     devShells.${system} = {
       # Used to bootstrap initialization of home-manager
-      bootstrap = pkgs.mkShell import ./bootstrap-shell.nix { inherit pkgs; };
+      default = pkgs.mkShell import ./bootstrap-shell.nix { inherit pkgs; };
       # Generalized nodejs development environment
       nodejs = pkgs.mkShell {
         buildInputs = with pkgs; [
