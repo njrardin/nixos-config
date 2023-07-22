@@ -58,6 +58,7 @@
       gitsigns-nvim
       lualine-nvim
       nvim-web-devicons
+      vimwiki
     ];
     
     extraPackages = with pkgs; [
