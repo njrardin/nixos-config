@@ -101,6 +101,14 @@
       recursive = true;
       source = ./config/nvim;
     };
+    "nixpkgs/config.nix" = {
+      text =
+      ''
+        {
+          allowUnfree = true;
+        }
+      '';
+    };
   };
     	
   # Enables redshift (a linux f.lux alternative)
