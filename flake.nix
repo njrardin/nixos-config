@@ -26,7 +26,10 @@
     };
     homeConfigurations = {
       "njrardin" = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgs;
+        pkgs = import nixpkgs {
+	  inherit system;
+	  config.allowUnfree = true;
+	};
         modules = [
           ./home.nix
         ];
@@ -34,7 +37,7 @@
     };
     devShells.${system} = {
       # Used to bootstrap initialization of home-manager
-      default = pkgs.mkShell import ./bootstrap-shell.nix { inherit pkgs; };
+      default = (import ./bootstrap-shell.nix { inherit pkgs; });
       # Generalized nodejs development environment
       nodejs = pkgs.mkShell {
         buildInputs = with pkgs; [
