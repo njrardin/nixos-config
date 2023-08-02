@@ -21,6 +21,7 @@
     fd
     grc
     sqlite
+    obsidian
   ];
 
   programs.git = {
