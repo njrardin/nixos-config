@@ -19,3 +19,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
+
+-- Undofile
+vim.opt.undodir = "~/.config/nvim/undofile"
+vim.opt.undofile = true
