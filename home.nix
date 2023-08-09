@@ -133,15 +133,6 @@
           }
         '';
     };
-    "onedrive/sync_list" = {
-      text =
-        ''
-          ~OneDrive_Home/
-          CameraRoll/
-          Pictures/
-          Documents/Obsidian_Vault/
-        '';
-    };
   };
 
   # Enables redshift (a linux f.lux alternative)

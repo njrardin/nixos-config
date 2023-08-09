@@ -130,9 +130,6 @@
   # Enables flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # OneDrive sync
-  services.onedrive.enable = true;
-
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
