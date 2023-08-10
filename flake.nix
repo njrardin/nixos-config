@@ -42,6 +42,7 @@
         nodejs = pkgs.mkShell {
           buildInputs = with pkgs; [
             nodejs
+            node2nix
             nodePackages.npm
             nodePackages.prettier
             nodePackages.eslint
