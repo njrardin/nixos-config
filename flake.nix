@@ -49,6 +49,11 @@
             typescript
             nodePackages.typescript-language-server
           ];
+
+          shellHook = ''
+            exec fish
+          '';
+            
         };
       };
     };
