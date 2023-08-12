@@ -24,6 +24,11 @@
     obsidian
   ];
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+  };
+
   programs.git = {
     enable = true;
     userName = "njrardin";
@@ -142,10 +147,5 @@
     longitude = -87.623177;
     duskTime = "22:00";
     dawnTime = "6:30";
-  };
-
-  # Visual Studio Code
-  programs.vscode = {
-    enable = true;
   };
 }
