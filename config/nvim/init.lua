@@ -7,12 +7,12 @@ vim.g.gruvbox_material_background = "hard"
 vim.cmd("colorscheme gruvbox-material")
 
 -- Vimwiki Settings
-vim.g.vimwiki_list = {{
-  path = '~/vimwiki/',
-  syntax = 'markdown',
-  ext = '.md'
-}}
-vim.g.vimwiki_global_ext = 0
+-- vim.g.vimwiki_list = {{
+--   path = '~/vimwiki/',
+--   syntax = 'markdown',
+--   ext = '.md'
+-- }}
+-- vim.g.vimwiki_global_ext = 0
 
 -- Plugin Config Files
 require "plugins.telescope"
@@ -24,3 +24,8 @@ require('lualine').setup({
     theme = 'gruvbox-material'
   }
 })
+require('neoscroll').setup({
+  easing_function = "quadratic"
+})
+require('nvim-autopairs').setup()
+require('nvim-ts-autotag').setup()

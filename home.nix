@@ -81,6 +81,14 @@
       nvim-treesitter.withAllGrammars
       coc-nvim
       coc-lua
+      coc-html
+      coc-css
+      coc-json
+      coc-eslint
+      coc-tsserver
+      coc-sh
+      coc-rls
+      coc-prettier
 
       # telescope
       telescope-nvim
@@ -93,7 +101,9 @@
       gitsigns-nvim
       lualine-nvim
       nvim-web-devicons
-      vimwiki
+      neoscroll-nvim
+      nvim-autopairs
+      nvim-ts-autotag
     ];
 
     extraPackages = with pkgs; [
