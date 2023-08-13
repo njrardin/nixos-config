@@ -164,4 +164,10 @@
     duskTime = "22:00";
     dawnTime = "6:30";
   };
+
+  # Enables the kdeconnect service
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 }
