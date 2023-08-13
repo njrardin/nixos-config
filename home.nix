@@ -22,6 +22,7 @@
     grc
     sqlite
     obsidian
+    inkscape
   ];
 
   programs.vscode = {
