@@ -113,6 +113,7 @@
   # Font installations
   fonts.fonts = with pkgs; [
     meslo-lgs-nf
+    open-sans
   ];
 
   # Defines my (Nathanael Rardin's) user account
