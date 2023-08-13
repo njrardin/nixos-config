@@ -125,6 +125,9 @@
   };
   programs.fish.enable = true;
 
+  # Onedrive service
+  services.onedrive.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
