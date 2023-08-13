@@ -148,6 +148,12 @@
           }
         '';
     };
+    "onedrive/sync_list" = {
+      text = ''
+        /Documents/Obsidian_Vault
+        /Library
+      '';
+    };
   };
 
   # Enables redshift (a linux f.lux alternative)
