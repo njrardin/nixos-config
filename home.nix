@@ -87,6 +87,7 @@
       coc-json
       coc-eslint
       coc-tsserver
+      coc-svelte
       coc-sh
       coc-rls
       coc-prettier
@@ -113,12 +114,12 @@
       rustc
 
       # language servers
-      nil
       nixd
       lua-language-server
       nodePackages."bash-language-server"
       nodePackages."typescript"
       nodePackages."typescript-language-server"
+      nodePackages."svelte-language-server"
       nodePackages."vscode-langservers-extracted"
       rust-analyzer
 
