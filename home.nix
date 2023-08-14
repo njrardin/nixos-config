@@ -167,6 +167,4 @@
     dawnTime = "6:30";
   };
 
-  # Enables kdeconnect
-  programs.kdeconnect.enable = true;
 }

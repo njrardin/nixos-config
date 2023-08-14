@@ -128,6 +128,9 @@
   # Onedrive service
   services.onedrive.enable = true;
 
+  # kdeconnect
+  programs.kdeconnect.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
