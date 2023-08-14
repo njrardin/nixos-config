@@ -111,7 +111,7 @@
   };
 
   # Font installations
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     meslo-lgs-nf
     open-sans
   ];
