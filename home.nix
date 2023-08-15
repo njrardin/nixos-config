@@ -91,6 +91,7 @@
       coc-sh
       coc-rls
       coc-prettier
+      coc-go
 
       # telescope
       telescope-nvim
@@ -122,6 +123,7 @@
       nodePackages."svelte-language-server"
       nodePackages."vscode-langservers-extracted"
       rust-analyzer
+      gopls
 
       # formatters
       nixpkgs-fmt

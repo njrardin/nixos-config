@@ -7,6 +7,7 @@ lspconfig.html.setup {}
 lspconfig.svelte.setup {}
 lspconfig.nixd.setup {}
 lspconfig.bashls.setup {}
+lspconfig.gopls.setup {}
 
 -- Has additional configurations for neovim specific config support
 require'lspconfig'.lua_ls.setup{
