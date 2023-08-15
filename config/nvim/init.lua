@@ -19,7 +19,6 @@ require('plugins.telescope')
 require('plugins.lspconfig')
 
 -- Require lines
-require('telescope').setup()
 require('gitsigns').setup()
 require('which-key').setup()
 require('copilot').setup()
