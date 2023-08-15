@@ -49,11 +49,17 @@
             typescript
             nodePackages.typescript-language-server
           ];
-
           shellHook = ''
             exec fish
           '';
-            
+        };
+        golang = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            go
+          ];
+          shellHook = ''
+            exec fish
+          '';
         };
       };
     };
