@@ -32,5 +32,12 @@ function edit_directory
     cd $old_dir
 end
 
+## Enters a specified devshell in a nixos config flake
+function use_nixos_devshell
+    set nixos_config_path (realpath $NIXOS_CONFIG_DIRECTORY)
+    nix develop $nixos_config_path\#$argv
+end
+
 ## Aliases
 alias nixconf 'edit_directory $NIXOS_CONFIG_DIRECTORY'
+alias nixdev 'use_nixos_devshell'
