@@ -58,6 +58,7 @@
             go
           ];
           shellHook = ''
+            export GOPATH=$HOME/lib/go
             export PATH=$PATH:/usr/local/go/bin
             exec fish
           '';
