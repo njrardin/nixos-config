@@ -125,9 +125,6 @@
   };
   programs.fish.enable = true;
 
-  # Onedrive service
-  services.onedrive.enable = true;
-
   # kdeconnect
   programs.kdeconnect.enable = true;
 
