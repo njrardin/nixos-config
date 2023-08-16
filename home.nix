@@ -152,7 +152,7 @@
           }
         '';
     };
-    "onedrive-0/sync_list" = {
+    "onedrive/sync_list" = {
       text = ''
         /Documents/Obsidian_Vault
         /Library
