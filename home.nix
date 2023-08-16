@@ -23,7 +23,6 @@
     sqlite
     obsidian
     inkscape
-    onedrive
   ];
 
   programs.vscode = {
