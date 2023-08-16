@@ -40,7 +40,7 @@
         default = (import ./bootstrap-shell.nix { inherit pkgs; });
         # Generalized nodejs development environment
         nodejs = pkgs.mkShell {
-          buildInputs = with pkgs; [
+          packages = with pkgs; [
             nodejs
             node2nix
             nodePackages.npm
@@ -54,7 +54,7 @@
           '';
         };
         golang = pkgs.mkShell {
-          buildInputs = with pkgs; [
+          packages = with pkgs; [
             go
           ];
           shellHook = ''
