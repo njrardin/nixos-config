@@ -79,8 +79,8 @@
     videoDrivers = [ "nvidia" ];
 
     # Enable the KDE Plasma Desktop Environment.
+    # desktopManager.plasma5.enable = true;
     displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
 
     # Configure keymap in X11
     layout = "us";
