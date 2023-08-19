@@ -10,14 +10,17 @@
   # Additional hardware configuration and hardware-configuration.nix overrides
   hardware.bluetooth.enable = true;
 
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
+  hardware.nvidia = {
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
-
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
+    # for hyprland compatability
+    modesetting.enable = true;
   };
 
   # GRUB 2 Bootloader
@@ -101,13 +104,13 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Font installations
@@ -134,6 +137,26 @@
   # Enables flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
+  hardware.opengl.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
@@ -142,6 +165,16 @@
     git
     xclip
     onedrive
+    # hyprland apps
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true"];
+      })
+    )
+    dunst
+    libnotify
+    swww
+    rofi-wayland
+    networkmanagerapplet
   ];
 
   # This value determines the NixOS release from which the default

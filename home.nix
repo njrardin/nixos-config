@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     neofetch
-    firefox
+    firefox-wayland
     tor-browser-bundle-bin
     bitwarden
     discord
@@ -157,6 +157,9 @@
         /Documents/Obsidian_Vault
         /Library
       '';
+    };
+    "hypr/hyprland.conf" = {
+      source = ./config/hypr/hyprland.conf;
     };
   };
 
