@@ -1,6 +1,6 @@
 # NJR NixOS configuration.nix
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -147,6 +147,7 @@
     enable = true;
     nvidiaPatches = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
