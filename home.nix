@@ -23,6 +23,7 @@
     sqlite
     obsidian
     inkscape
+    networkmanagerapplet
   ];
 
   programs.vscode = {
@@ -160,6 +161,15 @@
     };
     "hypr/hyprland.conf" = {
       source = ./config/hypr/hyprland.conf;
+    };
+    "hypr/start.sh" = {
+      text = 
+      ''
+        swww init &
+        swww img ~/nixos-config/wallpapers/palm-leaves.jpg &
+        nm-applet --indicator &
+        waybar &
+      '';
     };
   };
 
