@@ -134,6 +134,9 @@
   # Enables flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enables onedrive service
+  services.onedrive.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
