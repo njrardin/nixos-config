@@ -63,6 +63,16 @@
             exec fish
           '';
         };
+        c = pkgs.mkShell {
+          packages = with pkgs; [
+            gcc
+            mpi
+            gnumake
+          ];
+          shellHook = ''
+            exec fish
+          '';
+        };
       };
     };
 }
