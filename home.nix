@@ -16,7 +16,7 @@
     zip
     unzip
     bat
-    exa
+    eza
     fzf
     fd
     grc
