@@ -23,6 +23,7 @@
     sqlite
     obsidian
     inkscape
+    gnumake
   ];
 
   programs.vscode = {
